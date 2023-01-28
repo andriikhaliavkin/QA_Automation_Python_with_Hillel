@@ -32,3 +32,16 @@ def test_banknotes():
     assert library.banknotes("abc") == "приймаються тільки числа"
 
 test_banknotes()
+
+
+def test_coins():
+    assert library.coins(5) == "5 копійок"
+    assert library.coins(12) == "12 копійок"
+    assert library.coins(1) == "1 копійка"
+    assert library.coins(2) == "2 копійки"
+    assert library.coins(-5) == "вартість не може бути від'ємною"
+    assert library.coins(5.5) == "5 копійок"
+    assert library.coins("five") == "приймаються тільки числа"
+
+
+test_coins()
