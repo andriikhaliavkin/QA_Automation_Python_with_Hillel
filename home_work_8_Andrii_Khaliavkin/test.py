@@ -2,7 +2,6 @@ import library
 import unittest
 
 
-
 class TestAll(unittest.TestCase):
     def test_is_hot_today(self):
         assert library.is_hot_today(30) == "Hot"
@@ -11,7 +10,7 @@ class TestAll(unittest.TestCase):
         assert library.is_hot_today(-5) == "Cold"
         assert library.is_hot_today(25) == "Cold"
         assert library.is_hot_today(26) == "Hot"
-        assert library.is_hot_today() == "Hot" # test with default value
+        assert library.is_hot_today() == "Hot"  # test with default value
         assert library.is_hot_today("not a number") == "приймаються тільки числа"
 
     def test_atm(self):
@@ -39,6 +38,7 @@ class TestAll(unittest.TestCase):
         assert library.coins(-5) == "вартість не може бути від'ємною"
         assert library.coins(5.5) == "5 копійок"
         assert library.coins("five") == "приймаються тільки числа"
+
 
 suite = unittest.defaultTestLoader.loadTestsFromTestCase(TestAll)
 unittest.TextTestRunner().run(suite)
