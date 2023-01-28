@@ -19,3 +19,16 @@ def test_atm():
     assert library.atm("a hundred") == "приймаються тільки числа"
 
 test_atm()
+
+def test_banknotes():
+    assert library.banknotes(1) == "1 гривня"
+    assert library.banknotes(5) == "5 гривень"
+    assert library.banknotes(11) == "11 гривень"
+    assert library.banknotes(12) == "12 гривень"
+    assert library.banknotes(21) == "21 гривня"
+    assert library.banknotes(22) == "22 гривні"
+    assert library.banknotes(25) == "25 гривень"
+    assert library.banknotes(-1) == "вартість не може бути від'ємною"
+    assert library.banknotes("abc") == "приймаються тільки числа"
+
+test_banknotes()

@@ -14,7 +14,7 @@ def coins(coins_quantity):
     try:
         coins_quantity = int(coins_quantity)
         if coins_quantity < 0:
-            print("кількість копійок не може бути від'ємною")
+            return f"вартість не може бути від'ємною"
         else:
             if coins_quantity % 10 == 1 and coins_quantity != 11:
                 return f"{coins_quantity} копійка"
@@ -23,7 +23,7 @@ def coins(coins_quantity):
             else:
                 return f"{coins_quantity} копійок"
     except ValueError:
-        print("приймаються тільки числа")
+        return f"приймаються тільки числа"
 
 
 # написати функцію, яка отримує ціле число і повертає слово "гривня" у вірній формі: 1 -- гривня, 2 -- гривні, 25 -- гривень
@@ -39,7 +39,7 @@ def banknotes(banknotes_quantity):
     try:
         banknotes_quantity = int(banknotes_quantity)
         if banknotes_quantity < 0:
-            print("кількість гривень не може бути від'ємною")
+            return f"вартість не може бути від'ємною"
         else:
             if banknotes_quantity % 10 == 1 and banknotes_quantity != 11:
                 return f"{banknotes_quantity} гривня"
@@ -48,7 +48,7 @@ def banknotes(banknotes_quantity):
             else:
                 return f"{banknotes_quantity} гривень"
     except ValueError:
-        print("приймаються тільки числа")
+        return f"приймаються тільки числа"
 
 
 # написати функцію, яка приймає число і повертає список, в якому перший елемент - стрічка з цілою частиною числа + слово 'гривня'
