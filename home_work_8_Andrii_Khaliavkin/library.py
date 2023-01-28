@@ -2,7 +2,14 @@
 
 
 def coins(coins_quantity):
-    """     """
+    """
+        This function takes a number as an input and returns a string with the correct grammatical form of the word "копійка".
+        If the input is not a positive integer, the function will return an error message.
+        :param coins_quantity: the number of coins
+        :type coins_quantity: int
+        :return: string with the grammatically correct form of "копійка"
+        :rtype: str
+    """
     try:
         coins_quantity = int(coins_quantity)
         if coins_quantity < 0:
@@ -20,7 +27,14 @@ def coins(coins_quantity):
 
 # написати функцію, яка отримує ціле число і повертає слово "гривня" у вірній формі: 1 -- гривня, 2 -- гривні, 25 -- гривень
 def banknotes(banknotes_quantity):
-    """     """
+    """
+        This function takes a number as an input and returns a string with the correct grammatical form of the word "гривня".
+        If the input is not a positive integer, the function will return an error message.
+        :param banknotes_quantity: the number of banknotes
+        :type banknotes_quantity: int
+        :return: string with the grammatically correct form of "гривня"
+        :rtype: str
+    """
     try:
         banknotes_quantity = int(banknotes_quantity)
         if banknotes_quantity < 0:
@@ -34,3 +48,7 @@ def banknotes(banknotes_quantity):
                 return f"{banknotes_quantity} гривень"
     except ValueError:
         print("приймаються тільки цілі числа без спец. символів")
+
+
+
+
