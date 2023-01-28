@@ -104,3 +104,30 @@ def is_hot_today(temperature=30):
     except ValueError:
         print("приймаються тільки числа")
 
+# створіть функцію, яка отримує від користувача число і повертає його як число. проте!!! якщо користувач ввів не вірні дані,
+# які не можна конвертувати в число ("шість"), заставте користувача ввести валідні дані (цикли вам в допомогу).
+# результатом в будь-якому випадку має бути число. зауважте - функція має прийняти один не обовязковий стрічковий
+# аргумент - месседж, за замовчуванням - "Введіть число"
+
+def user_number_input():
+    """
+        This function prompts the user to input a number.
+        It checks if the input is a valid number and greater than or equal to 0.
+        If the input is not a valid number, it throws a ValueError and prompts the user to enter a valid number.
+        If the input is less than 0, it throws an error and prompts the user to enter a number greater than or equal to 0.
+        It returns the valid input number.
+        :return: user's input
+        :rtype: float
+    """
+    while True:
+        try:
+            user_input = float(input("Введіть число "))
+            if user_input < 0:
+                print("вартість не може бути від'ємною")
+                continue
+            return user_input
+        except ValueError:
+            print("приймаються тільки числа")
+            continue
+
+user_number_input()
