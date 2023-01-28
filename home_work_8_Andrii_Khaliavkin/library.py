@@ -7,7 +7,7 @@ def coins(coins_quantity):
         This function takes a number as an input and returns a string with the correct grammatical form of the word "копійка".
         If the input is not a positive integer, the function will return an error message.
         :param coins_quantity: the number of coins
-        :type coins_quantity: int
+        :type coins_quantity: int / float
         :return: string with the grammatically correct form of "копійка"
         :rtype: str
     """
@@ -23,7 +23,7 @@ def coins(coins_quantity):
             else:
                 return f"{coins_quantity} копійок"
     except ValueError:
-        print("приймаються тільки цілі числа без спец. символів")
+        print("приймаються тільки числа")
 
 
 # написати функцію, яка отримує ціле число і повертає слово "гривня" у вірній формі: 1 -- гривня, 2 -- гривні, 25 -- гривень
@@ -32,7 +32,7 @@ def banknotes(banknotes_quantity):
         This function takes a number as an input and returns a string with the correct grammatical form of the word "гривня".
         If the input is not a positive integer, the function will return an error message.
         :param banknotes_quantity: the number of banknotes
-        :type banknotes_quantity: int
+        :type banknotes_quantity: int / float
         :return: string with the grammatically correct form of "гривня"
         :rtype: str
     """
@@ -48,7 +48,7 @@ def banknotes(banknotes_quantity):
             else:
                 return f"{banknotes_quantity} гривень"
     except ValueError:
-        print("приймаються тільки цілі числа без спец. символів")
+        print("приймаються тільки числа")
 
 
 
@@ -60,16 +60,24 @@ def banknotes(banknotes_quantity):
 # (логіку, що робити з 125.339 залишаю на вас - чи округляйте, чи відкидайте - і це рішення пропишіть в докстрінгі)
 
 def atm(money):
-    """     """
+    """
+    This function takes a number as an input and returns a list with integer and fractional parts of it with correct
+    grammatical form of the words "гривня" and "копійка". Fractional parts are rounded to 2 decimals after coma.
+    :param money: the number of money
+    :type money: int / float
+    :return: splitted number on its integer and fractional parts with correct grammatical form of the words "гривня" and "копійка"
+    :rtype: list
+    """
     try:
         money = round(float(money), 2)
         if money < 0:
-            print("You can't have negative amount of money")
+            print("вартість не може бути від'ємною")
         else:
             kopijky, hrywni = math.modf(money)
             kopijky = round(kopijky*100, 0)
-            print(kopijky)
+            bank_account = [banknotes(hrywni), coins(kopijky)]
+            print(bank_account)
+            return bank_account
     except ValueError:
-        print("приймаються тільки цілі числа без спец. символів")
+        print("приймаються тільки числа")
 
-atm(10.24)
