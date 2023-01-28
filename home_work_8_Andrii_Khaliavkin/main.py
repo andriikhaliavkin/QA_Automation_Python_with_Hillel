@@ -1,6 +1,8 @@
 import library
 
 def main():
-    library.atm(library.user_number_input())
+    print(f'надана вами сума: {library.atm(library.user_number_input())}')
 
-main()
+
+if __name__ == "__main__":
+    main()
