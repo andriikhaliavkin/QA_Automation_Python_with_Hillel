@@ -51,7 +51,6 @@ def banknotes(banknotes_quantity):
         print("приймаються тільки числа")
 
 
-
 # написати функцію, яка приймає число і повертає список, в якому перший елемент - стрічка з цілою частиною числа + слово 'гривня'
 # у вірному відмінку, другий елемент - стрічка з мантісою (значення після коми), + слово 'копійка' у вірній формі. \
 # наприклад - 1 -- ['1 гривня', "0 копійок"]; 10.1 -- ['10 гривень', "10 копійок"]; 2.01 -- ['2 гривні', "1 копійка"].
@@ -74,10 +73,34 @@ def atm(money):
             print("вартість не може бути від'ємною")
         else:
             kopijky, hrywni = math.modf(money)
-            kopijky = round(kopijky*100, 0)
+            kopijky = round(kopijky * 100, 0)
             bank_account = [banknotes(hrywni), coins(kopijky)]
-            print(bank_account)
             return bank_account
+    except ValueError:
+        print("приймаються тільки числа")
+
+
+# напишіть функцію is_hot_today, яка отримує параметр температури (число, за замовчуванням 30), і в залежності від величини
+# повідомляє, чи сьогодні жарко, чи холодно (більше 25 - жарко, інакше холодно). перевірку на -155555555555 градусів
+# чи +555555555555 не проводимо, просто відштовхуємося від отриманого значення. подумайте, який тип даних має повертати функція
+
+def is_hot_today(temperature=30):
+    """
+        This function takes in an optional parameter 'temperature' which is a number representing the temperature.
+        It checks if the temperature is greater than 25, if yes, returns "Hot", otherwise returns "Cold".
+        The default value for temperature is 30.
+        In case of invalid input (not a number) it will throw ValueError and print "приймаються тільки числа"
+        :param temperature: number which represents a temperature
+        :type temperature: int / float
+        :return: whether condition cold or hot
+        :rtype: str
+    """
+    try:
+        temperature = int(temperature)
+        if temperature > 25:
+            return "Hot"
+        else:
+            return "Cold"
     except ValueError:
         print("приймаються тільки числа")
 
