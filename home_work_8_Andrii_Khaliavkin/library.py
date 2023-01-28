@@ -130,4 +130,3 @@ def user_number_input():
             print("приймаються тільки числа")
             continue
 
-user_number_input()
