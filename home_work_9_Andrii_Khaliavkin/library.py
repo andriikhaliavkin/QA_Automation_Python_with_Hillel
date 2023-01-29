@@ -19,3 +19,6 @@ def zip_lists_to_dict(keys: list, values: list) -> dict:
 # zip_lists_to_dict = lambda keys, values: dict(zip(keys, values))
 
 
+def filter_strings_by_length(strings: list, length: int) -> list:
+    return list(filter(lambda x: len(x) < length, strings))
+
