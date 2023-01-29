@@ -1,5 +1,6 @@
 def transcript_the_number_of_coins(coins_quantity: float) -> str:
     """
+        receives number and returns text transcription amount of coins (str)
     """
     coins_quantity = abs(int(coins_quantity))
     if not isinstance(coins_quantity, int):
@@ -16,6 +17,7 @@ def transcript_the_number_of_coins(coins_quantity: float) -> str:
 
 def transcript_the_number_of_banknotes(banknotes_quantity: float) -> str:
     """
+        receives number and returns text transcription amount of banknotes (str)
     """
     banknotes_quantity = abs(int(banknotes_quantity))
     if not isinstance(banknotes_quantity, int):
@@ -31,6 +33,7 @@ def transcript_the_number_of_banknotes(banknotes_quantity: float) -> str:
 
 def transcript_the_amount_of_money(money: float) -> list:
     """
+        receives number and returns text transcript amount of banknotes and coins (list)
     """
     money = abs(round(float(money), 2))
     if not isinstance(money, float):
