@@ -27,7 +27,7 @@ class Company:
     def get_info(self) -> str:
         """Return a string with information about the company.
         Returns:
-        str: A string with information about the company, including name, industry, founded year, headquarter,
+            str: A string with information about the company, including name, industry, founded year, headquarter,
         revenue, and number of employees.
         """
         return f"{self.name} is a {self.industry} company founded in {self.founded_year}. Its headquarter is located in {self.headquarter} and it has an annual revenue of {self.revenue} and {self.employees} employees."
@@ -35,17 +35,17 @@ class Company:
     def update_revenue(self, new_revenue: float) -> None:
         """Update the company's annual revenue.
         Args:
-        new_revenue (float): The new revenue of the company.
+            new_revenue (float): The new revenue of the company.
         Returns:
-        None
+            None
         """
         self.revenue = new_revenue
 
     def add_employees(self, additional_employees: int) -> None:
         """Add employees to the company.
         Args:
-        additional_employees (int): The number of employees to add to the company.
+            additional_employees (int): The number of employees to add to the company.
         Returns:
-        None
+            None
         """
         self.employees += additional_employees
