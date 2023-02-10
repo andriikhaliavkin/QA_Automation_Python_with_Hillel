@@ -23,13 +23,25 @@ class Smartphone(Gadget):
         self.__screen_size = screen_size
         self.__camera_resolution = camera_resolution
 
-    def get_operating_system(self):
+    def get_operating_system(self) -> str:
+        """
+        Returns:
+            str: Operating system
+        """
         return self.__operating_system
 
-    def get_screen_size(self):
+    def get_screen_size(self) -> float:
+        """
+        Returns:
+            float: The screen size
+        """
         return self.__screen_size
 
-    def get_camera_resolution(self):
+    def get_camera_resolution(self) -> int:
+        """
+        Returns:
+            int: camera's resolution
+        """
         return self.__camera_resolution
 
 
